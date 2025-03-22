@@ -66,7 +66,7 @@ require('dashboard').setup {
             }, {
                 icon = ' ',
                 icon_hl = 'Title',
-                desc = 'Git Braches',
+                desc = 'Git Branches',
                 desc_hl = 'String',
                 key = 'b',
                 keymap = 'SPC g b',
