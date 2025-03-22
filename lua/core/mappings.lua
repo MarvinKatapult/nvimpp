@@ -97,6 +97,8 @@ if vim.g.is_lsp_enabled then
 	vim.keymap.set('n', '<leader>lR', ':lua vim.lsp.buf.rename()<CR>')
 	vim.keymap.set('n', '<leader>lf', ':lua vim.lsp.buf.format()<CR>')
 	vim.keymap.set('n', '<leader>lp', functions.GenerateCompileCommands, { noremap = true, silent = true })
+	vim.keymap.set('n', '<leader>cd', functions.ChangeDirectory, { noremap = true, silent = true})
+	vim.keymap.set('n', '<leader><Enter>', functions.ExecuteSavedCmd, { noremap = true, silent = true})
 	vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
 	vim.keymap.set('n', 'T', vim.lsp.buf.declaration, opt)
 	vim.keymap.set('n', 't', vim.lsp.buf.definition, opt)

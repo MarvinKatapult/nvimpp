@@ -55,6 +55,17 @@ function M.GenerateCompileCommands()
 	end
 end
 
+function M.ExecuteSavedCmd()
+    local saved_cmd = vim.g.saved_cmd
+    vim.g.saved_cmd = vim.fn.input('Command: ', saved_cmd == nil and '' or saved_cmd, 'command')
+    vim.cmd('!' .. vim.g.saved_cmd)
+end
+
+function M.ChangeDirectory()
+    local dir = vim.fn.input('Change Directory: ', '', 'dir')
+    vim.cmd('cd ' .. dir)
+end
+
 -- Funktionen exportieren
 return M
 

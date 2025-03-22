@@ -18,7 +18,7 @@ vim.o.shada = "'100,f1"
 vim.opt.autowrite = true 
 
 -- Aktive Zeile
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 
 -- Maus
 vim.opt.mouse = ""
@@ -39,7 +39,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.shortmess:append("c")
 
 -- Indent Einstellungen
-vim.opt.expandtab = false
+vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -73,3 +73,10 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end
   end,
 })
+
+-- Leerzeichen sichtbar machen
+vim.opt.list = true
+vim.opt.listchars = {
+  space = "·",
+	tab = "  "
+}
