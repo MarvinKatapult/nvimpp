@@ -63,10 +63,7 @@ function M.ExecuteSavedCmd()
         return
     end
 
-    vim.cmd('split')
-    vim.cmd('term')
-    vim.api.nvim_feedkeys('i' .. vim.g.saved_cmd .. '\n', 'n', true)
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Esc>', true, false, true) .. 'G$', 'm', false)
+    vim.cmd(':!' .. vim.g.saved_cmd)
 end
 
 function M.ChangeDirectory()
