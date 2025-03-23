@@ -63,7 +63,7 @@ function M.ExecuteSavedCmd()
         return
     end
 
-    vim.cmd(':!' .. vim.g.saved_cmd)
+    vim.cmd(vim.g.saved_cmd)
 end
 
 function M.ChangeDirectory()

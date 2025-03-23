@@ -6,10 +6,10 @@
 -- Color Scheme
 -- Catppuchin Themes: catppuccin, catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 -- Andere Themen: kanagawa,onedark,glowbeam
-vim.g.colorscheme='kanagawa'
+vim.g.colorscheme='glowbeam'
 
 -- Transparenz aktivieren/deaktivieren
-vim.g.is_transparency_enabled=true
+vim.g.is_transparency_enabled=false
 
 -- LSP aktivieren/deaktivieren
 vim.g.is_lsp_enabled = true
