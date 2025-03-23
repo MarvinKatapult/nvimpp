@@ -58,12 +58,19 @@ end
 function M.ExecuteSavedCmd()
     local saved_cmd = vim.g.saved_cmd
     vim.g.saved_cmd = vim.fn.input('Command: ', saved_cmd == nil and '' or saved_cmd, 'command')
-    vim.cmd('!' .. vim.g.saved_cmd)
+
+    if vim.g.saved_cmd == '' then
+        return
+    end
+
+    vim.cmd('split')
+    vim.cmd('term')
+    vim.api.nvim_feedkeys('i' .. vim.g.saved_cmd .. '\n', 'n', true)
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Esc>', true, false, true) .. 'G$', 'm', false)
 end
 
 function M.ChangeDirectory()
-    local dir = vim.fn.input('Change Directory: ', '', 'dir')
-    vim.cmd('cd ' .. dir)
+    vim.api.nvim_feedkeys(':cd ', 'n', true)
 end
 
 -- Funktionen exportieren

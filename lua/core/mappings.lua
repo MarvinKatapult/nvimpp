@@ -1,8 +1,8 @@
 -- Globale Leader Taste
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
 
 -- Lokale Funktionen
-local functions = require("core.functions")
+local functions = require('core.functions')
 
 -- Eigene Einstellungen von VIM
 vim.keymap.set('n', '<F5>', ':Neogen<CR>')
@@ -15,7 +15,7 @@ vim.keymap.set('n', '<F12>', ':bd<CR>')
 vim.keymap.set('i', '<F12>', '<ESC>:bd<CR>')
 
 -- Zeilennummern umschalten
-vim.keymap.set("n", "<leader>n", functions.ToggleLineNumber, { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>n', functions.ToggleLineNumber, { noremap = true, silent = true })
 
 -- Komplette Zeile mit Y kopieren
 vim.api.nvim_set_keymap('n', 'Y', 'yy', { noremap = true, silent = true })
@@ -27,19 +27,19 @@ vim.keymap.set('n', '<leader>gs', ':Neotree float git_status<CR>')
 vim.keymap.set('n', '<c-e>', ':Neotree left toggle<CR>')
 
 -- Telescope
-vim.keymap.set("n", "<leader><leader>", ":Telescope oldfiles<CR>")
-vim.keymap.set('n', '<leader>ff', ":Telescope find_files<CR>")
-vim.keymap.set('n', '<leader>fw', ":Telescope live_grep<CR>")
-vim.keymap.set('n', '<leader>fb', ":Telescope buffers<CR>")
-vim.keymap.set('n', '<leader>fh', ":Telescope help_tags<CR>")
-vim.keymap.set("n", "<c-f>", ":Telescope find_files<CR>")
-vim.keymap.set("n", "<c-g>", ":Telescope live_grep<CR>")
-vim.keymap.set("n", "<c-t>", ":Telescope buffers<CR>")
+vim.keymap.set('n', '<leader><leader>', ':Telescope oldfiles<CR>')
+vim.keymap.set('n', '<leader>ff', ':Telescope find_files<CR>')
+vim.keymap.set('n', '<leader>fw', ':Telescope live_grep<CR>')
+vim.keymap.set('n', '<leader>fb', ':Telescope buffers<CR>')
+vim.keymap.set('n', '<leader>fh', ':Telescope help_tags<CR>')
+vim.keymap.set('n', '<c-f>', ':Telescope find_files<CR>')
+vim.keymap.set('n', '<c-g>', ':Telescope live_grep<CR>')
+vim.keymap.set('n', '<c-t>', ':Telescope buffers<CR>')
 
 -- Telescope Git 
-vim.keymap.set('n', '<leader>gb', ":Telescope git_branches<CR>")
-vim.keymap.set('n', '<leader>gc', ":Telescope git_commits<CR>")
-vim.keymap.set('n', '<leader>gd', ":Telescope git_status<CR>")
+vim.keymap.set('n', '<leader>gb', ':Telescope git_branches<CR>')
+vim.keymap.set('n', '<leader>gc', ':Telescope git_commits<CR>')
+vim.keymap.set('n', '<leader>gd', ':Telescope git_status<CR>')
 
 -- Navigation
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
@@ -81,14 +81,14 @@ vim.keymap.set('n', '<leader>pl', ':Lazy<CR>')
 vim.keymap.set('n', '<leader>pm', ':Mason<CR>')
 
 -- Schnell zwischen Änderungen mit 'g,' und 'g-' springen
-vim.keymap.set("n", "g-", "g;", { noremap = true, silent = true })
+vim.keymap.set('n', 'g-', 'g;', { noremap = true, silent = true })
 
 -- LSP
 if vim.g.is_lsp_enabled then
-	vim.keymap.set("n", "<leader>lg", vim.diagnostic.setqflist, { noremap = true, silent = true })
-	vim.keymap.set("n", "<leader>lG", vim.diagnostic.open_float, { noremap = true, silent = true })
-	vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { noremap = true, silent = true })
-	vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { noremap = true, silent = true })
+	vim.keymap.set('n', '<leader>lg', vim.diagnostic.setqflist, { noremap = true, silent = true })
+	vim.keymap.set('n', '<leader>lG', vim.diagnostic.open_float, { noremap = true, silent = true })
+	vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { noremap = true, silent = true })
+	vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { noremap = true, silent = true })
 	vim.keymap.set('n', '<leader>ld', ':lua vim.lsp.buf.definition()<CR>')
 	vim.keymap.set('n', '<leader>lD', ':lua vim.lsp.buf.declaration()<CR>')
 	vim.keymap.set('n', '<leader>lK', ':lua vim.lsp.buf.hover()<CR>')
