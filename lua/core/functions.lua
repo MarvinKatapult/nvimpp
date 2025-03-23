@@ -55,6 +55,7 @@ function M.GenerateCompileCommands()
 	end
 end
 
+-- Führt Befehl aus und speichert ihn
 function M.ExecuteSavedCmd()
     local saved_cmd = vim.g.saved_cmd
     vim.g.saved_cmd = vim.fn.input('Command: ', saved_cmd == nil and '' or saved_cmd, 'command')
@@ -63,9 +64,10 @@ function M.ExecuteSavedCmd()
         return
     end
 
-    vim.cmd(vim.g.saved_cmd)
+    vim.cmd(':!' .. vim.g.saved_cmd)
 end
 
+-- Öffnet Befehl um Directory zu ändern
 function M.ChangeDirectory()
     vim.api.nvim_feedkeys(':cd ', 'n', true)
 end

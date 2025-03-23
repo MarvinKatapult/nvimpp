@@ -30,6 +30,8 @@ wk.add(
     { "<leader>p", group = "Plugins", icon ={icon = "", color = "blue"}},
     { "<leader>pl", desc = "Lazy", icon ={icon = "", color = "blue"}},
     { "<leader>pm", desc = "Mason", icon ={icon = "", color = "blue"}},
+    { "<leader><Enter>", desc = "Execute Cmd", icon ={icon = "", color = "blue"}},
+    { "<leader>cd", desc = "Change Directory", icon ={icon = "", color = "blue"}},
   }
 )
 
