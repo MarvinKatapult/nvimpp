@@ -72,6 +72,11 @@ function M.ChangeDirectory()
     vim.api.nvim_feedkeys(':cd ', 'n', true)
 end
 
+function M.SearchFilesWithPath()
+    local path = vim.fn.input('Path to search:', '', 'dir')
+    vim.cmd('Telescope find_files cwd=' .. path)
+end
+
 -- Funktionen exportieren
 return M
 

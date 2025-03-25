@@ -29,6 +29,7 @@ vim.keymap.set('n', '<c-e>', ':Neotree left toggle<CR>')
 -- Telescope
 vim.keymap.set('n', '<leader><leader>', ':Telescope oldfiles<CR>')
 vim.keymap.set('n', '<leader>ff', ':Telescope find_files<CR>')
+vim.keymap.set('n', '<leader>fa', functions.SearchFilesWithPath, { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>fw', ':Telescope live_grep<CR>')
 vim.keymap.set('n', '<leader>fb', ':Telescope buffers<CR>')
 vim.keymap.set('n', '<leader>fh', ':Telescope help_tags<CR>')
