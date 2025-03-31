@@ -41,7 +41,10 @@ require("lazy").setup({
 	-- LSP Konfiguration
 	{'neovim/nvim-lspconfig'}, 
 	{'hrsh7th/cmp-nvim-lsp'}, {'hrsh7th/cmp-buffer'}, {'hrsh7th/cmp-path'},
-	{'hrsh7th/cmp-cmdline'}, {'hrsh7th/nvim-cmp'}, {'lewis6991/gitsigns.nvim'},
+	{'hrsh7th/cmp-cmdline'}, {'hrsh7th/nvim-cmp'}, 
+
+    -- Git Signs
+    {'lewis6991/gitsigns.nvim'},
 
 	-- Status Line
 	{
@@ -59,13 +62,10 @@ require("lazy").setup({
 	{'akinsho/toggleterm.nvim', version = "*", config = true},
 
 	-- Null LS Formatter
-	{'jose-elias-alvarez/null-ls.nvim'}, 
+    {'nvimtools/none-ls.nvim'},
 
 	-- Auto Klammern
 	{'windwp/nvim-autopairs'},
-
-	-- Buffer Management
-	--{'Djancyp/outline'}, 
 
 	-- Komments Plugin
 	{'terrortylor/nvim-comment'},

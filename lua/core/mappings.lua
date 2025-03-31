@@ -66,8 +66,10 @@ vim.keymap.set('n', '<leader>s', ':BufferLineSortByTabs<CR>')
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 
 -- Tabs
-vim.keymap.set('n', '<Tab>', ':BufferLineCycleNext<CR>')
-vim.keymap.set('n', '<s-Tab>', ':BufferLineCyclePrev<CR>')
+vim.keymap.set('n', '<Tab>', ':BufferLineCycleNext<CR>', { silent = true })
+vim.keymap.set('n', '<s-Tab>', ':BufferLineCyclePrev<CR>', { silent = true })
+vim.keymap.set('n', '<c-right>', ':BufferLineCycleNext<CR>', { silent = true })
+vim.keymap.set('n', '<c-left>', ':BufferLineCyclePrev<CR>', { silent = true })
 
 -- Transparenz
 vim.keymap.set('n', '<leader>T', ':TransparentToggle<CR>');
