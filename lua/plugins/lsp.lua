@@ -17,6 +17,11 @@ lspconfig.clangd.setup {
   }
 }
 
+lspconfig.ols.setup {
+    cmd = { "ols" },
+    filetypes = { "odin" }
+}
+
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
 -- LspAttach wird dann aufgerufen, wenn Verbindung mit Language Server entsteht
