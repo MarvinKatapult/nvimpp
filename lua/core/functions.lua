@@ -57,14 +57,29 @@ end
 
 -- Führt Befehl aus und speichert ihn
 function M.ExecuteSavedCmd()
-    local saved_cmd = vim.g.saved_cmd
-    vim.g.saved_cmd = vim.fn.input('Command: ', saved_cmd == nil and '' or saved_cmd, 'command')
-
-    if vim.g.saved_cmd == '' then
+    vim.g.saved_cmd = vim.fn.input("Command: ", vim.g.saved_cmd == nil and '' or vim.g.saved_cmd, 'command')
+    if cmd == "" then
         return
     end
 
-    vim.cmd(':!' .. vim.g.saved_cmd)
+    local buf = vim.api.nvim_create_buf(false, true)
+    local win = vim.api.nvim_open_win(buf, true, {
+        relative = 'editor',
+        width = math.floor(vim.o.columns * 0.8),
+        height = math.floor(vim.o.lines * 0.8),
+        row = math.floor(vim.o.lines * 0.1),
+        col = math.floor(vim.o.columns * 0.1),
+        style = 'minimal',
+        border = 'double',
+    })
+
+    vim.fn.termopen(vim.g.saved_cmd)
+    vim.cmd('stopinsert')
+    vim.defer_fn(function()
+        if vim.api.nvim_win_is_valid(win) then
+            vim.api.nvim_win_set_cursor(win, {vim.api.nvim_buf_line_count(buf), 0})
+        end
+    end, 100)
 end
 
 -- Öffnet Befehl um Directory zu ändern
