@@ -58,7 +58,7 @@ end
 -- Führt Befehl aus und speichert ihn
 function M.ExecuteSavedCmd()
     vim.g.saved_cmd = vim.fn.input("Command: ", vim.g.saved_cmd == nil and '' or vim.g.saved_cmd, 'command')
-    if cmd == "" then
+    if vim.g.saved_cmd == "" then
         return
     end
 
