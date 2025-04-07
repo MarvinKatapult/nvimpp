@@ -9,12 +9,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	-- Colorschemes
-	{'cooperuser/glowbeam.nvim'}, 
-	{
-		'kartikp10/noctis.nvim',
-		dependencies = {'rktjmp/lush.nvim'}
-	},
+	-- Colorscheme
+	{'morhetz/gruvbox'},
 
 	-- Telescope
 	{

@@ -3,8 +3,10 @@
 -- GitHub: https://github.com/vhstack/nvimpp
 
 
--- Color Scheme glowbeam,noctis
-vim.g.colorscheme='noctis'
+-- Color Scheme gruvbox
+vim.g.gruvbox_bold = '0'
+vim.g.colorscheme = 'gruvbox'
+vim.g.gruvbox_contrast_dark = 'hard'
 
 -- Transparenz aktivieren/deaktivieren
 vim.g.is_transparency_enabled=false
