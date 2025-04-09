@@ -1,6 +1,8 @@
 -- NeoVim Konfiguration zusammengestellt für C/C++ Development
 -- Author: Viktor Herzog
 -- GitHub: https://github.com/vhstack/nvimpp
+--
+-- Fork von Marvin Katapult
 
 
 -- Color Scheme gruvbox
