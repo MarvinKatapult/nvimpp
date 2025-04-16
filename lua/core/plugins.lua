@@ -10,7 +10,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	-- Colorscheme
-	{'morhetz/gruvbox'},
+    {'luisiacc/gruvbox-baby'},
 
 	-- Telescope
 	{
