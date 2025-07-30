@@ -1,22 +1,17 @@
 --require('lualine').setup()
 require('lualine').setup {
     options = {
-         --theme = bubbles_theme,
+        theme = moonfly,
         component_separators = '|',
         section_separators = {left = '', right = ''}
     },
     sections = {
         lualine_a = {{'mode', separator = {left = ''}, right_padding = 2}},
-        lualine_b = {
-            'filename', 'branch'
-            -- require("lsp-progress").progress  
-        },
-        lualine_c = {'fileformat'},
-        lualine_x = {},
-        lualine_y = {'filetype', 'progress'},
-        lualine_z = {
-            {'location', separator = {right = ''}, left_padding = 2}
-        }
+        lualine_b = {},
+        lualine_c = {'filename', 'branch', 'fileformat'},
+        lualine_x = {'filetype', 'progress',{'location', separator = {right = ''}, left_padding = 2}},
+        lualine_y = {},
+        lualine_z = {}
     },
     inactive_sections = {
         lualine_a = {'filename'},

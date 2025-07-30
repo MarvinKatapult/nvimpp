@@ -6,12 +6,10 @@
 
 
 -- Color Scheme gruvbox
-vim.g.gruvbox_bold = '0'
-vim.g.gruvbox_contrast_dark = 'hard'
-vim.g.colorscheme = 'gruvbox-baby'
+vim.g.colorscheme = 'moonfly'
 
 -- Transparenz aktivieren/deaktivieren
-vim.g.is_transparency_enabled=false
+vim.g.is_transparency_enabled = false
 
 -- LSP aktivieren/deaktivieren
 vim.g.is_lsp_enabled = true

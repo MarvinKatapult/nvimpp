@@ -10,7 +10,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	-- Colorscheme
-    {'luisiacc/gruvbox-baby'},
+    {'ellisonleao/gruvbox.nvim'},
+    { "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
 
 	-- Telescope
 	{
