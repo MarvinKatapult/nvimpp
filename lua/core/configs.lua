@@ -82,3 +82,11 @@ vim.opt.listchars = {
   space = "·",
 	tab = "  "
 }
+
+-- Fasm als Assembly erkennen
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+  pattern = "*.fasm",
+  callback = function()
+    vim.bo.filetype = "asm"
+  end,
+})
