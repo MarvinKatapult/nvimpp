@@ -55,12 +55,21 @@ function M.GenerateCompileCommands()
 	end
 end
 
--- Führt Befehl aus und speichert ihn
 function M.ExecuteSavedCmd()
-    vim.g.saved_cmd = vim.fn.input("Command: ", vim.g.saved_cmd == nil and '' or vim.g.saved_cmd, 'command')
-    if vim.g.saved_cmd == "" then
+    local Path = require('plenary.path')
+    local file = Path:new(vim.fn.stdpath('data'), 'saved_cmd.txt')
+
+    if vim.g.saved_cmd == nil then
+        vim.g.saved_cmd = file:exists() and file:read() or ""
+    end
+
+    local cmd = vim.fn.input("Command: ", vim.g.saved_cmd, 'command')
+    if cmd == "" then
         return
     end
+
+    vim.g.saved_cmd = cmd
+    file:write(cmd, 'w')
 
     local buf = vim.api.nvim_create_buf(false, true)
     local win = vim.api.nvim_open_win(buf, true, {
