@@ -1,7 +1,7 @@
 -- NeoVim Konfiguration zusammengestellt für C/C++ Development
 -- Author: Viktor Herzog
 -- GitHub: https://github.com/vhstack/nvimpp
---
+
 -- Fork von Marvin Katapult
 
 
@@ -9,11 +9,20 @@
 vim.g.colorscheme = 'gruvbox'
 
 -- Transparenz aktivieren/deaktivieren
-vim.g.is_transparency_enabled = false
+vim.g.is_transparency_enabled=false
 
 -- LSP aktivieren/deaktivieren
 vim.g.is_lsp_enabled = true
 
+-- Funktionen
+local functions = require("core.functions")
+
+-- Git Konfiguration
+vim.g.is_git_enabled = functions.IsGitRepo()
+
+-- Benutzer Preload Konfiguration
+-- Hier können z.B. globale Variablen gesetzt werden
+pcall(require, "custom.preload")
 
 -- Basic config
 require("core.plugins")
@@ -26,7 +35,6 @@ require("plugins.telescope")
 require("plugins.mason")
 require("plugins.nullls")
 require("plugins.lualine")
-require("plugins.gitsigns")
 require("plugins.treesitter")
 require("plugins.toggleterm")
 require("plugins.outline")
@@ -38,8 +46,14 @@ require("plugins.neotree")
 require("plugins.dashboard")
 require("plugins.whichkey")
 require("plugins.outline")
+require("plugins.colorizer")
 
--- LSP Konfiguration
+-- GIT Plugins
+if vim.g.is_git_enabled then
+	require("plugins.gitsigns")
+end
+
+-- LSP Plugins
 if vim.g.is_lsp_enabled then
 	require("plugins.cmp")
 	require("plugins.lsp")
@@ -55,3 +69,7 @@ if vim.g.is_transparency_enabled then
 else
 	vim.cmd('TransparentDisable')
 end
+
+-- Benutzer Postload Konfiguration
+-- Hier kann z.B. nachträglich Tastenbelegung angepasst werden
+pcall(require, "custom.postload")

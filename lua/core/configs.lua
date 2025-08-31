@@ -33,7 +33,7 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 -- Clipboard
-vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard = {}
 
 -- Shorter Nachrichten
 vim.opt.shortmess:append("c")
@@ -60,8 +60,8 @@ vim.opt.fillchars = {
 }
 
 -- Hervorhebung zurücksetzen
-vim.cmd([[highlight clear LineNr]])
-vim.cmd([[highlight clear SignColumn]])
+vim.api.nvim_set_hl(0, "LineNr", {})
+vim.api.nvim_set_hl(0, "SignColumn", {})
 
 -- Letzte Cursor Position merken
 vim.api.nvim_create_autocmd("BufReadPost", {
@@ -73,20 +73,5 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     if last_pos[1] > 0 and last_pos[1] <= line_count then
       vim.api.nvim_win_set_cursor(0, last_pos)
     end
-  end,
-})
-
--- Leerzeichen sichtbar machen
-vim.opt.list = true
-vim.opt.listchars = {
-  space = "·",
-	tab = "  "
-}
-
--- Fasm als Assembly erkennen
-vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
-  pattern = "*.fasm",
-  callback = function()
-    vim.bo.filetype = "asm"
   end,
 })
