@@ -6,7 +6,7 @@
 
 
 -- Color Scheme gruvbox
-vim.g.colorscheme = 'moonfly'
+vim.g.colorscheme = 'gruvbox'
 
 -- Transparenz aktivieren/deaktivieren
 vim.g.is_transparency_enabled = false
