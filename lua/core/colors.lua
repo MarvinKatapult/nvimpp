@@ -24,9 +24,11 @@ require("gruvbox").setup({
   invert_signs = false,
   invert_tabline = false,
   inverse = true, -- invert background for search, diffs, statuslines and errors
-  contrast = "", -- can be "hard", "soft" or empty string
+  contrast = "medium", -- can be "hard", "soft" or empty string
   palette_overrides = {},
-  overrides = {},
+  overrides = {
+		SignColumn = {bg = "#282828"}
+	},
   dim_inactive = false,
   transparent_mode = false,
 })
