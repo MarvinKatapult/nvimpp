@@ -75,3 +75,10 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end
   end,
 })
+
+-- Detect .fasm as assembly
+vim.filetype.add({
+  extension = {
+    fasm = "asm",  -- Maps .fasm files to assembly filetype
+  },
+})

@@ -17,6 +17,15 @@ lspconfig.clangd.setup {
   }
 }
 
+lspconfig.ols.setup {
+	init_options = {
+		checker_args = "-strict-style",
+		collections = {
+			{ name = "shared", path = vim.fn.expand('$HOME/odin-lib') }
+		},
+	},
+}
+
 -- Konfiguration LSP Diagnostics
 vim.diagnostic.config({
   virtual_text = true,       -- zeigt Text inline (in der Codezeile)
